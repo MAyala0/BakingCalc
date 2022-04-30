@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="icon" href="img/favicon.ico" type="image/icon">
+    <title>Baking Calculator</title>
+</head>
+
+<body>
+    <header>
+        <!--Jumbotron-->
+        <div class="row justify-content-center">
+            <div class="jumbotron jumbotron-fluid col-8">
+                <div class="container">
+                    <h1 class="display-4">Baking Calculator</h1>
+                    <p class="lead">Calculate the weight for your ingredients based on the baker's percentage.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <!--Percentages column-->
+            <div class="col-6 d-flex justify-content-center">
+                <div class="col-10 ">
+                    <div class="row my-3">
+                        <h2>Percentages</h2>
+                    </div>
+                    <form>
+                        <!--Ingredients-->
+                        <div class="form-group row">
+                            <label for="percentageFlour" class="col-sm-4 col-form-label text-right">Flour</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="percentageFlour"
+                                    placeholder="100" readonly>
+                            </div>
+                            <div class="col-sm-3">%</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="percentageWater" class="col-sm-4 col-form-label text-right">Water</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="percentageWater"
+                                    placeholder="Water" value="75">
+                            </div>
+                            <div class="col-sm-2">%</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="percentageSalt" class="col-sm-4 col-form-label text-right">Salt</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="percentageSalt"
+                                    placeholder="Salt" value="4">
+                            </div>
+                            <div class="col-sm-2">%</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="percentageYeast" class="col-sm-4 col-form-label text-right">Yeast</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="percentageYeast"
+                                    placeholder="Yeast" value="2">
+                            </div>
+                            <div class="col-sm-2">%</div>
+                        </div>
+                        <hr>
+                        <!-- no of Loaves/weight per loaf-->
+                        <div class="form-group row">
+                            <label for="inputLoaves" class="col-sm-4 col-form-label text-right">No of Loaves</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="inputLoaves"
+                                    placeholder="Loaves" value="2">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputWeightPL" class="col-sm-4 col-form-label text-right">Weight Per
+                                Loaf</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control text-center" id="inputWeightPL"
+                                    placeholder="Weight" value="500">
+                            </div>
+                            <div class="col-sm-2">Grams</div>
+                        </div>
+                        <div class="form-group row float-right">
+                            <div class="col-sm-10">
+                                <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--Recipe column-->
+            <div class="col-6 d-flex justify-content-center">
+                <div class="col-10 ">
+                    <div class="row my-3">
+                        <h2>Recipe</h2>
+                    </div>
+                    <!--recipe without poolish & btn to add poolish-->
+                    <div class="row" id="recipe">
+                        <div class="col">
+                            <p id="weightFlour"></p>
+                            <p id="weightWater"></p>
+                            <p id="weightSalt"></p>
+                            <p id="weightYeast"></p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="poolishBtnDiv">
+
+                    </div>
+
+                    <!--Poolish form-->
+                    <div class="row" id="poolishForm">
+
+                    </div>
+
+                    <!--recipe with poolish-->
+                    <div class="row" id="recipeWithPoolish">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+
+    <footer>
+        <hr>
+        <p class="d-flex justify-content-end">2022</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

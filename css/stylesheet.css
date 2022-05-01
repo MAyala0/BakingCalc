@@ -1,7 +1,51 @@
-.ltgreen{
-    background-color: rgb(226, 238, 213);
+.ltyellow{
+    background-color: rgb(228, 211, 185,.9);
+    max-height: 200px;
+    max-width: 95%;
 }
 
 .hide{
     display: none;
+}
+
+body{
+    background-image: url("../img/grains.jpg");
+    background-repeat: repeat;
+    background-size: 300px; 
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.opaque{
+    background-color: rgb(228, 211, 185, .9);
+    border-radius: 3%;
+}
+
+.whiteBackground{
+    background-color: white;
+}
+
+.fixedelement{
+    width:16%;
+}
+
+.btnColor{
+background-color: rgb(221,153,51);
+}
+
+.btnposition{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+.btnpositionPoolish{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+hr{    
+    border-top: 3px solid rgba(223, 174, 102, 0.9);
+    max-width: 75%;
 }

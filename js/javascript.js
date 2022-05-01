@@ -17,7 +17,6 @@ function calculateBtnClicked() {
     setIngredientPercentages();
     calculateTotalFlour();
     setIngredientWeights();
-
 }
 
 function setIngredientPercentages() {
@@ -30,12 +29,12 @@ function setIngredientPercentages() {
 
 function calculateTotalFlour() {
     //percentage total = sum of ingredient percentages
-    let percentageTotal = (ingredientPercentages[0] + ingredientPercentages[1] + ingredientPercentages[2] + ingredientPercentages[3]) / 100;
+    const percentageTotal = (ingredientPercentages[0] + ingredientPercentages[1] + ingredientPercentages[2] + ingredientPercentages[3]) / 100;
 
     //calculate total weight 
     const loaves = parseFloat(document.getElementById("inputLoaves").value);
     const weightPL = parseFloat(document.getElementById("inputWeightPL").value);
-    let totalWeight = loaves * weightPL;
+    const totalWeight = loaves * weightPL;
 
     //calculate total flour
     totalFlour = totalWeight / percentageTotal;
@@ -43,13 +42,15 @@ function calculateTotalFlour() {
 
 function setIngredientWeights() {
     //add weights to array
-    ingredientWeights = [Math.round(totalFlour), Math.round(totalFlour * (ingredientPercentages[1] / 100)), Math.round(totalFlour * (ingredientPercentages[2] / 100)), Math.round(totalFlour * (ingredientPercentages[3] / 100))]
+    ingredientWeights = [Math.round(totalFlour), Math.round(totalFlour * (ingredientPercentages[1] / 100)), Math.round(totalFlour * (ingredientPercentages[2] / 100)), (totalFlour * (ingredientPercentages[3] / 100)).toFixed(2)]
 
     //Display weights in recipe section
     document.getElementById("weightFlour").textContent = "Flour: " + ingredientWeights[0] + " grams";
     document.getElementById("weightWater").textContent = "Water: " + ingredientWeights[1] + " grams";
     document.getElementById("weightSalt").textContent = "Salt: " + ingredientWeights[2] + " grams";
     document.getElementById("weightYeast").textContent = "Yeast: " + ingredientWeights[3] + " grams";
+
+    //change show/hide
     document.getElementById("poolishForm").classList.add("hide");
     document.getElementById("recipeWithPoolish").classList.add("hide");
     document.getElementById("poolishBtnDiv").classList.remove("hide");
@@ -65,14 +66,12 @@ function needPoolishBtnClicked() {
 
 function calculatepoolish() {
     //calculate poolish ingredient weights
-    let poolishFlour = Math.round( totalFlour * (parseFloat(document.getElementById("poolishPercent").value) / 100));
-    let poolishWater = poolishFlour * (parseFloat(document.getElementById("poolishWaterPercent").value) / 100);
+    let poolishFlour = Math.round(totalFlour * (parseFloat(document.getElementById("poolishPercent").value) / 100));
+    let poolishWater = Math.round(poolishFlour * (parseFloat(document.getElementById("poolishWaterPercent").value) / 100));
     let poolishYeast = (poolishFlour * (parseFloat(document.getElementById("poolishYeastPercent").value) / 100)).toFixed(2);
 
-
-
     //subtract from remaining ingredients to calculate final dough
-    let finalDoughFlour = Math.round( totalFlour - poolishFlour);
+    let finalDoughFlour = Math.round(totalFlour - poolishFlour);
     let finalDoughWater = ingredientWeights[1] - poolishWater;
     let finalDoughSalt = ingredientWeights[2];
     let finalDoughYeast = ingredientWeights[3] - poolishYeast;
@@ -80,7 +79,6 @@ function calculatepoolish() {
     //hide form, show poolish recipe
     document.getElementById("poolishForm").classList.add("hide");
     document.getElementById("recipeWithPoolish").classList.remove("hide");
-
 
     //show poolish recipe
     document.getElementById("weightFlourPoolish").textContent = "Flour: " + poolishFlour + " grams";
@@ -92,8 +90,3 @@ function calculatepoolish() {
     document.getElementById("weightYeastRemaining").textContent = "Yeast: " + finalDoughYeast + " grams";
 
 }
-
-
-
-//add reset btn
-//add other ingredients

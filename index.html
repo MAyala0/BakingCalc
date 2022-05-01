@@ -6,84 +6,96 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS & font -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="icon" href="img/favicon.ico" type="image/icon">
-    <title>Baking Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>Baker's Calculator</title>
 </head>
 
 <body>
     <header>
         <!--Jumbotron-->
-        <div class="row justify-content-center">
-            <h1>Baker's Calculator </h1>
+        <div class=" d-flex justify-content-center">
+            <div class="jumbotron ltyellow pt-3 justify-content-center">
+                <div class="container">
+                    <h1 class="display-4">Baker's Calculator</h1>
+                    <p class="lead">Use this calculator when using baker's percentages in place of a recipe. Enter the
+                        percentage for
+                        each ingredient and your desired yield to calculate the amounts needed for your recipe.</p>
+                </div>
+            </div>
         </div>
     </header>
     <main class="container">
         <div class="row">
+
             <!--Percentages column-->
-            <div class="col-6 d-flex justify-content-center">
-                <div class="col-10 ">
-                    <div class="row my-3">
-                        <h2>Percentages</h2>
+            <div class="col-lg-6 d-flex justify-content-center mt-2">
+                <div class="col-10 opaque">
+                    <div class="row pl-3 my-3 ">
+                        <h2 class="display-4">Percentages</h2>
                     </div>
                     <form>
                         <!--Ingredients-->
                         <div class="form-group row">
-                            <label for="percentageFlour" class="col-sm-4 col-form-label text-right">Flour</label>
-                            <div class="col-sm-5">
+                            <label for="percentageFlour" class="col-sm-5 col-form-label text-right">Flour</label>
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="percentageFlour"
                                     placeholder="100" readonly>
                             </div>
-                            <div class="col-sm-3">%</div>
+                            <div class="col-sm-4 pl-0 pt-2">%</div>
                         </div>
                         <div class="form-group row">
-                            <label for="percentageWater" class="col-sm-4 col-form-label text-right">Water</label>
-                            <div class="col-sm-5">
+                            <label for="percentageWater" class="col-sm-5 col-form-label text-right">Water</label>
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="percentageWater"
                                     placeholder="Water" value="75">
                             </div>
-                            <div class="col-sm-2">%</div>
+                            <div class="col-sm-4 pl-0 pt-2">%</div>
                         </div>
                         <div class="form-group row">
-                            <label for="percentageSalt" class="col-sm-4 col-form-label text-right">Salt</label>
-                            <div class="col-sm-5">
+                            <label for="percentageSalt" class="col-sm-5 col-form-label text-right">Salt</label>
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="percentageSalt"
                                     placeholder="Salt" value="4">
                             </div>
-                            <div class="col-sm-2">%</div>
+                            <div class="col-sm-4 pl-0 pt-2">%</div>
                         </div>
                         <div class="form-group row">
-                            <label for="percentageYeast" class="col-sm-4 col-form-label text-right">Yeast</label>
-                            <div class="col-sm-5">
+                            <label for="percentageYeast" class="col-sm-5 col-form-label text-right">Yeast</label>
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="percentageYeast"
                                     placeholder="Yeast" value="2">
                             </div>
-                            <div class="col-sm-2">%</div>
+                            <div class="col-sm-4 pl-0 pt-2">%</div>
                         </div>
                         <hr>
                         <!-- no of Loaves/weight per loaf-->
                         <div class="form-group row">
-                            <label for="inputLoaves" class="col-sm-4 col-form-label text-right">No of Loaves</label>
-                            <div class="col-sm-5">
+                            <label for="inputLoaves" class="col-sm-5 col-form-label text-right">No of
+                                Loaves</label>
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="inputLoaves"
                                     placeholder="Loaves" value="2">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputWeightPL" class="col-sm-4 col-form-label text-right">Weight Per
+                            <label for="inputWeightPL" class="col-sm-5 col-form-label text-right">Weight Per
                                 Loaf</label>
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <input type="number" class="form-control text-center" id="inputWeightPL"
                                     placeholder="Weight" value="500">
                             </div>
-                            <div class="col-sm-2">Grams</div>
+                            <div class="col-sm-4 pl-0 pt-2">Grams</div>
                         </div>
                         <div class="form-group row float-right">
                             <div class="col-sm-10">
-                                <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                                <button type="button" class="btn btnColor" id="calculateBtn">Calculate</button>
                             </div>
                         </div>
                     </form>
@@ -91,71 +103,73 @@
             </div>
 
             <!--Recipe column-->
-            <div class="col-6 d-flex justify-content-center">
-                <div class="col-10 ">
-                    <div class="row my-3">
-                        <h2>Recipe</h2>
+            <div class="col-lg-6 d-flex justify-content-center mt-2">
+                <div class="col-10 opaque ">
+                    <div class="row pl-3 my-3">
+                        <h2 class="display-4">Recipe</h2>
                     </div>
                     <!--recipe without poolish & btn to add poolish-->
-                    <div class="row" id="recipe">
+                    <div class="row hide" id="recipe">
                         <div class="col">
-                            <p id="weightFlour"></p>
-                            <p id="weightWater"></p>
-                            <p id="weightSalt"></p>
-                            <p id="weightYeast"></p>
+                            <ul id="recipeList">
+                                <li id="weightFlour"></li>
+                                <li id="weightWater"></li>
+                                <li id="weightSalt"></li>
+                                <li id="weightYeast"></li>
+                            </ul>
                         </div>
                     </div>
-
-                    <div class="row hide" id="poolishBtnDiv">
+                    <div class="row hide btnpositionPoolish" id="poolishBtnDiv">
                         <div class="col-sm-10">
-                            <button type="button" class="btn btn-primary" id="needAPoolishBtn">I need a Poolish</button>
+                            <button type="button" class="btn btnColor text-nowrap" id="needAPoolishBtn">Add a
+                                Poolish</button>
                         </div>
                     </div>
 
                     <!--Poolish form-->
                     <div class="row hide" id="poolishForm">
                         <form>
-                        
+
                             <div class="form-group row">
-                                <label for="poolishPercent" class="col-sm-4 col-form-label text-right">Total Poolish
+                                <label for="poolishPercent" class="col-sm-5 col-form-label text-right">Total Poolish
                                     Percentage</label>
-                                <div class="col-sm-5">
+                                <div class="col-sm-3">
                                     <input type="number" class="form-control text-center" id="poolishPercent"
                                         placeholder="20" value="20">
                                 </div>
-                                <div class="col-sm-2">%</div>
+                                <div class="col-sm-4  pl-0 pt-2">%</div>
                             </div>
                             <div class="form-group row">
                                 <label for="poolishFlourPercent"
-                                    class="col-sm-4 col-form-label text-right">Flour</label>
-                                <div class="col-sm-5">
+                                    class="col-sm-5 col-form-label text-right">Flour</label>
+                                <div class="col-sm-3">
                                     <input type="number" class="form-control text-center" id="poolishFlourPercent"
                                         placeholder="100" value="100" readonly>
                                 </div>
-                                <div class="col-sm-2">%</div>
+                                <div class="col-sm-4  pl-0 pt-2">%</div>
                             </div>
                             <div class="form-group row">
                                 <label for="poolishWaterPercent"
-                                    class="col-sm-4 col-form-label text-right">Water</label>
-                                <div class="col-sm-5">
+                                    class="col-sm-5 col-form-label text-right">Water</label>
+                                <div class="col-sm-3">
                                     <input type="number" class="form-control text-center" id="poolishWaterPercent"
                                         placeholder="100" value="100">
                                 </div>
-                                <div class="col-sm-2">%</div>
+                                <div class="col-sm-4  pl-0 pt-2">%</div>
                             </div>
                             <div class="form-group row">
                                 <label for="poolishYeastPercent"
-                                    class="col-sm-4 col-form-label text-right">Yeast</label>
-                                <div class="col-sm-5">
+                                    class="col-sm-5 col-form-label text-right">Yeast</label>
+                                <div class="col-sm-3">
                                     <input type="number" class="form-control text-center" id="poolishYeastPercent"
                                         placeholder=".1" value=".1">
                                 </div>
-                                <div class="col-sm-2">%</div>
+                                <div class="col-sm-4  pl-0 pt-2">%</div>
                             </div>
-                            <div class="form-group row float-right">
+                            <div class="form-group row btnposition">
                                 <div class="col-sm-10">
-                                    <button type="button" class="btn btn-primary" id="calculatePoolishBtn">Get Recipe
-                                        With Poolish</button>
+                                    <button type="button" class="btn btnColor"
+                                        id="calculatePoolishBtn">Calculate</button>
                                 </div>
                             </div>
                         </form>
@@ -167,20 +181,24 @@
                             <div class="row">
                                 <div class="col-12">
                                     <h3>Poolish</h3>
-                                    <p id="weightFlourPoolish"></p>
-                                    <p id="weightWaterPoolish"></p>
-                                    <p id="weightYeastPoolish"></p>
+                                    <ul id="poolishList">
+                                        <li id="weightFlourPoolish"></li>
+                                        <li id="weightWaterPoolish"></li>
+                                        <li id="weightYeastPoolish"></li>
+                                    </ul>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-12">
                                     <h3>Final Dough</h3>
-                                    <p id="weightFlourRemaining"></p>
-                                    <p id="weightWaterRemaining"></p>
-                                    <p id="weightSaltRemaining"></p>
-                                    <p id="weightYeastRemaining"></p>
-                                    <p>+ All of Poolish</p>
+                                    <ul id="finalDoughList">
+                                        <li id="weightFlourRemaining"></li>
+                                        <li id="weightWaterRemaining"></li>
+                                        <li id="weightSaltRemaining"></li>
+                                        <li id="weightYeastRemaining"></li>
+                                        <li>+ All of Poolish</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +211,6 @@
     <!--Footer-->
 
     <footer>
-        <hr>
         <p class="d-flex justify-content-end">2022</p>
     </footer>
 

@@ -1,3 +1,7 @@
 .ltgreen{
     background-color: rgb(226, 238, 213);
 }
+
+.hide{
+    display: none;
+}
